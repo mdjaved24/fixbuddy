@@ -22,6 +22,7 @@ const workerServiceRoutes = require('./routes/workerServiceRoutes');
 const queryRoutes = require('./routes/queryRoutes');
 const serviceRoutes = require('./routes/serviceRoutes'); 
 const passwordRoutes = require('./routes/passwordRoutes');
+const showQueryRoutes = require('./routes/showQueryRoutes');
 
 app.use('/api/users', userRoutes);
 app.use('/api/worker', workerRoutes);
@@ -30,6 +31,7 @@ app.use('/api/login', loginRoute);
 app.use('/api/queries', queryRoutes);
 app.use('/api/services', serviceRoutes);
 app.use('/api/password', passwordRoutes);
+app.use('/api/admin', showQueryRoutes);
 
 // MongoDB connection string from environment variables
 const db = process.env.MONGO_URI;

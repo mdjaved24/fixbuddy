@@ -2,6 +2,7 @@ const express = require('express');
 const bcrypt = require('bcrypt');
 const User = require('../models/User');
 const Worker = require('../models/Worker');
+const AdminData= require('../models/Admin');
 const router = express.Router();
 
 router.post('/logIn', async (req, res) => {
@@ -13,6 +14,8 @@ router.post('/logIn', async (req, res) => {
       user = await User.findOne({ email });
     } else if (role === 'worker') {
       user = await Worker.findOne({ email });
+    }else if(role === 'admin'){
+      user = await AdminData.findOne({ email });
     }
 
     if (!user) {

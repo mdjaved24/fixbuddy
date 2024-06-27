@@ -7,7 +7,7 @@ const router = express.Router();
 
 // Route to submit a new query
 router.post('/submitQuery', async (req, res) => {
-    const { name, phone, email, message } = req.body;
+    const { name, phone, email, message, createdAt } = req.body;
 
     try {
         // Find user or worker by email
@@ -20,7 +20,8 @@ router.post('/submitQuery', async (req, res) => {
             email,
             message,
             userId: user ? user._id : null,
-            workerId: worker ? worker._id : null
+            workerId: worker ? worker._id : null,
+            createdAt
         };
 
         // Create a new query

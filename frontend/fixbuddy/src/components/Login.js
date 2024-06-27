@@ -53,8 +53,14 @@ export default function Login() {
          setTimeout(() => {
            setShowSuccessMessage(true);
            setShowErrorMessage('');
-          // Redirect to homepage after showing success message
-          navigate('/Homepage');
+           if(role === 'admin'){
+            // Redirect to admin homepage after showing success message
+           navigate('/AdminHome');
+           }else{
+              // Redirect to homepage after showing success message
+              navigate('/Homepage');
+           }
+          
         }, 1000);
     } catch (error) {
       console.error(error);
@@ -127,6 +133,19 @@ export default function Login() {
                         />
                         <label htmlFor="role-tasker" className="ml-2 block text-sm text-gray-700">
                             Tasker
+                        </label>
+                    </div>
+                    <div className="flex items-center">
+                        <input
+                            type="radio"
+                            value="admin"
+                            checked={role === 'admin'}
+                            onChange={() => setRole('admin')}
+                            id="role-admin"
+                            className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300"
+                        />
+                        <label htmlFor="role-admin" className="ml-2 block text-sm text-gray-700">
+                            Admin
                         </label>
                     </div>
                 </div>

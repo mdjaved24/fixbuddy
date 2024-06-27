@@ -12,6 +12,7 @@ import WorkersListPage from './pages/WorkersListPage';
 import Homepage from './pages/Homepage';
 import ResetPassword from './components/ResetPassword';
 import ForgotPassword from './components/ForgotPassword';
+import AdminHome from './pages/AdminHome';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/workers-list/:serviceCategory" element={<WorkersListPage />} />
         <Route path="/ForgotPassword" element={<ForgotPassword />} />
         <Route path="/ResetPassword" element={<ResetPassword />} />
+        <Route path="/AdminHome" element={<AdminHome />} />
       </Routes>
     </Router>
   );

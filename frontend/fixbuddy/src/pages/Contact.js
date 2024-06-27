@@ -11,7 +11,8 @@ export default function Contact() {
     name: '',
     phone: '',
     email: '',
-    message: ''
+    message: '',
+    createdAt: ''
 });
 
 const handleChange = (e) => {
@@ -21,14 +22,14 @@ const handleChange = (e) => {
 const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-        const response = await axios.post('/api/queries/submitQuery', formData);
+        const currDate = new Date().toString();
+        const response = await axios.post('/api/queries/submitQuery',  { ...formData, createdAt: currDate });
         console.log(response.data);
         setShowSuccessMessage(true);
         setTimeout(() => {
            setShowSuccessMessage(false);
         }, 2000);
-        
-        setFormData({ name: '', phone: '', email: '', message: '' });
+        setFormData({ name: '', phone: '', email: '', message: '', createdAt: '' });
     } catch (err) {
         console.error('Error submitting query:', err);
         alert('Error submitting query');

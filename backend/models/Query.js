@@ -7,7 +7,7 @@ const QuerySchema = new mongoose.Schema({
     message: { type: String, required: true },
     userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: false },
     workerId: { type: mongoose.Schema.Types.ObjectId, ref: 'Worker', required: false },
-    createdAt: { type: Date, default: Date.now }
+    createdAt: { type: String, required: true }
 });
 
 module.exports = mongoose.model('Query', QuerySchema);
