@@ -24,30 +24,7 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    houseNo: {
-        type: String,
-        required: true
-    },
-    roadNo: {
-        type: String,
-        required: true
-    },
-    locality: {
-        type: String,
-        required: true
-    },
-    city: {
-        type: String,
-        required: true
-    },
-    state: {
-        type: String,
-        required: true
-    },
-    pinCode: {
-        type: String,
-        required: true
-    },
+    address: String,
     securityQuestion: String,
     securityAnswer: String,
 });

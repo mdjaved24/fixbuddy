@@ -27,12 +27,7 @@ router.post('/signup', async (req, res) => {
             phone: `${countryCode}${phone}`,
             email,
             password: hashedPassword,
-            houseNo,
-            roadNo,
-            locality,
-            city,
-            state,
-            pinCode,
+            address: `House no:${houseNo} Road no:${roadNo} Locality:${locality} City:${city} State:${state} Pincode:${pinCode}`,
             securityQuestion,
             securityAnswer
         });

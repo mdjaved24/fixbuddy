@@ -34,14 +34,7 @@ router.post('/workerSignup', async (req, res) => {
             phone: `${countryCode} ${phone}`,
             email,
             password: hashedPassword,
-            address: {
-                houseNo,
-                roadNo,
-                locality,
-                city,
-                state,
-                pincode
-            },
+            address: `House no:${houseNo} Road no:${roadNo} Locality:${locality} City:${city} State:${state} Pincode:${pincode}`,
             age,
             services,
             serviceArea,

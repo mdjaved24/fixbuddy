@@ -6,14 +6,7 @@ const workerSchema = new mongoose.Schema({
     phone: { type: String, unique: true },
     email: { type: String, unique: true },
     password: String,
-    address: {
-        houseNo: String,
-        roadNo: String,
-        locality: String,
-        city: String,
-        state: String,
-        pincode: String
-    },
+    address: String,
     services: [String],
     age: String,
     serviceArea: String,

@@ -9,7 +9,8 @@ mongoose.connect('mongodb://localhost:27017/fixbuddy', {
 const admin = new Admin({
     name: 'Md Javed',
     email: 'mdjav077@gmail.com',
-    password: 'javed24@'
+    password: 'javed24@',
+    phone: '9142450358'
 });
 
 admin.save()
